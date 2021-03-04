@@ -11,10 +11,15 @@ Has 24/7 news dissemination and everyone analyzing the market overtaken good fun
 With covid vaccines making an appearance we decided to choose pharmaceuticals as our sector to forecast prices. 
 Stocks include Astrazeneca, Bristol Myers Squibb, J&J, Merck and Pfizer.
 
-Will be able to download data everyday.
+Refresh data daily using yahoo api.
+<p>
 Independent variables: Open, Close, Adjusted Close,  High, Low and Volume
+<p>
 Dependent is forecasting price.
+  <p>
 https://finance.yahoo.com/
-yfinance is the library
+Source: yfinance is the library
+    <p>
 ML Algorithm: ARIMA  auto regressive moving average model or fb profit.
+      <p>
 Use plotly and javascript, be able to plot as the data changes.
