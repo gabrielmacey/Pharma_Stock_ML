@@ -6,7 +6,7 @@ We decided to take a swipe at the stock market, game stop anyone ?
 Questions?
 Can we use machine learning to forecast the price of the stock looking at 10 years worth of historical prices ?
 Can we apply the same learning algorithm to a different sector ?
-Has 24/7 news dissemination and everyone pretending a stock analyst has news overtaken good fundamentals?
+Has 24/7 news dissemination and everyone analyzing the market overtaken good fundamentals?
 
 With covid vaccines making an appearance we decided to choose pharmaceuticals as our sector to forecast prices. 
 Stocks include Astrazeneca, Bristol Myers Squibb, J&J, Merck and Pfizer.
