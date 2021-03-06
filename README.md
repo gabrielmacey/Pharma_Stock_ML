@@ -23,3 +23,6 @@ Source: yfinance is the library
 ML Algorithm: ARIMA  auto regressive moving average model or fb profit.
       <p>
 Use plotly and javascript, be able to plot as the data changes.
+        <p>
+Resources:
+https://www.analyticsvidhya.com/blog/2018/10/predicting-stock-price-machine-learningnd-deep-learning-techniques-python/
