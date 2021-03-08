@@ -33,13 +33,13 @@ def run_facebook_prophet_model(stock_df):
     m.fit(features) # fit the model using all data
     future = m.make_future_dataframe(periods=365) #we need to specify the number of days in future
     prediction = m.predict(future)
-    m.plot(prediction)
-    plt.title("Prediction of the BMY Stock Price using the Prophet")
-    plt.xlabel("Date")
-    plt.ylabel("Close Stock Price")
-    plt.show()
-    m.plot_components(prediction)
-    plt.show()
+    # m.plot(prediction)
+    # plt.title("Prediction of the BMY Stock Price using the Prophet")
+    # plt.xlabel("Date")
+    # plt.ylabel("Close Stock Price")
+    # plt.show()
+    # m.plot_components(prediction)
+    #plt.show()
     print(prediction.columns)
 
     plot_df =  pd.DataFrame({'date': features['ds'],
@@ -53,6 +53,8 @@ def run_arima_model(stock_df):
     from sklearn.metrics import mean_squared_error
     from pandas.plotting import lag_plot
     print(stock_df.isnull().sum())
+
+    """
     plt.figure(figsize=(12,8))
     lag_plot(stock_df['close'], lag=5)
     plt.title('BMY Stock - Autocorrelation plot with lag = 5')
@@ -67,16 +69,17 @@ def run_arima_model(stock_df):
     plt.xlabel("time")
     plt.ylabel("price")
     plt.show()
-
+    """
+    
     X_train, X_test = stock_df[0:int(len(stock_df)*0.8)], stock_df[int(len(stock_df)*0.8):]
     X_train = X_train.set_index('date')
     X_test = X_test.set_index('date')
 
-    plt.figure(figsize=(12,8))
+    """ plt.figure(figsize=(12,8))
     ax=X_train.plot(grid=True, figsize=(12,8))
     X_test.plot(ax=ax,grid=True)
     plt.legend(['X_test', 'X_train'])
-    plt.show()
+    plt.show() """
 
     training_data = X_train['close'].values
     test_data = X_test['close'].values
@@ -108,14 +111,14 @@ def run_arima_model(stock_df):
                         'prediction': model_predictions,
                         'actual': test_data})
     print(plot_df)
-    import plotly.express as go
+    """ import plotly.express as go
     fig = go.line(plot_df,x='date',y=['prediction','actual'])
-    fig.show()
+    fig.show() """
     to_json = plot_df.to_json(orient='records')
     return to_json
 
 
-if __name__ == "__main__":
-    stock_df = get_stock_data('GME')
-    #run_facebook_prophet_model(stock_df)
-    run_arima_model(stock_df)
+# if __name__ == "__main__":
+#     stock_df = get_stock_data('GME')
+#     #run_facebook_prophet_model(stock_df)
+#     run_arima_model(stock_df)
